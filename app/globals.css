@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A96E;
+  --gold-light: #E8CC94;
+  --gold-dark: #8B6A3E;
+  --obsidian: #060810;
+  --obsidian-2: #0C1120;
+  --obsidian-3: #121929;
+  --midnight: #0A0F1E;
+  --slate: #1A2035;
+  --slate-2: #242B40;
+  --ice: #E8EEF8;
+  --ice-dim: #8E9AB5;
+  --ember: #C43055;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: var(--ice);
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--obsidian); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* Selection */
+::selection { background: rgba(201,169,110,0.25); color: var(--ice); }
+
+/* Gradient text utility */
+.gradient-gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-white-gold {
+  background: linear-gradient(135deg, #fff 0%, var(--ice) 40%, var(--gold-light) 70%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-gold {
+  background: rgba(201, 169, 110, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Grid bg */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(201,169,110,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,169,110,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Focus ring */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: rgba(201, 169, 110, 0.5) !important;
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
